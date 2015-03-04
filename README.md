@@ -6,7 +6,7 @@ Simple Feedback library, forked from [fladdict/AAMFeedback](https://github.com/f
 
 ## Installation
 
-	pod 'AAMFeedback', :git => 'https://github.com/azu/AAMFeedback.git'
+	pod 'AAMFeedback', :git => 'https://github.com/PlusR/AAMFeedback.git'
 
 ## Usage
 
@@ -38,7 +38,7 @@ You’ll need to manually create/copy AAMLocalizable.strings to your project.
 
 Example project:
 
-* [azu/AAMFeedbackLocalizeExample](https://github.com/azu/AAMFeedbackLocalizeExample "azu/AAMFeedbackLocalizeExample")
+* [PlusR/AAMFeedbackLocalizeExample](https://github.com/PlusR/AAMFeedbackLocalizeExample "PlusR/AAMFeedbackLocalizeExample")
 
 Thanks [Move lproj directories to Appirater.bundle when using CocoaPods by eager · Pull Request #129 · arashpayan/appirater](https://github.com/arashpayan/appirater/pull/129 "Move lproj directories to Appirater.bundle when using CocoaPods by eager · Pull Request #129 · arashpayan/appirater").
 
