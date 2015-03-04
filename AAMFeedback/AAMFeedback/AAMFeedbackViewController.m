@@ -418,7 +418,11 @@ static BOOL _alwaysUseMainBundle = NO;
 }
 
 - (NSString *)_appName {
-    return [[NSBundle mainBundle] infoDictionary][@"CFBundleDisplayName"];
+    return [self _localizedAppName] ? [self _localizedAppName] : [[NSBundle mainBundle] infoDictionary][@"CFBundleDisplayName"];
+}
+
+- (NSString *)_localizedAppName {
+    return [[NSBundle mainBundle] localizedInfoDictionary][@"CFBundleDisplayName"];
 }
 
 - (NSString *)_appVersion {
