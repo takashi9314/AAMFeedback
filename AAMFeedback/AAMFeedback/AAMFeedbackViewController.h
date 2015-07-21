@@ -24,6 +24,13 @@
 @property(nonatomic) NSInteger selectedTopicsIndex;
 @property(nonatomic, copy) void (^beforeShowAction)(MFMailComposeViewController *);
 
+@property(nonatomic, copy) NSString *descriptionPlaceHolder;
+@property(nonatomic, copy) NSString *topicsTitle;
+@property(nonatomic, copy) NSString *tableHeaderTopics;
+@property(nonatomic, copy) NSString *tableHeaderBasicInfo;
+@property(nonatomic, copy) NSString *mailDidFinishWithError;
+@property(nonatomic, copy) NSString *buttonMail;
+
 - (instancetype)initWithTopics:(NSArray *) theTopics;
 
 + (BOOL)isAvailable;

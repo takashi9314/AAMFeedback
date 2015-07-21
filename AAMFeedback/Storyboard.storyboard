@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="C6s-cd-Ka9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="C6s-cd-Ka9">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-545" y="452"/>
         </scene>
-        <!--View Controller - ViewController-->
+        <!--ViewController-->
         <scene sceneID="hRm-Qy-RB8">
             <objects>
                 <viewController storyboardIdentifier="ViewController" title="ViewController" id="saz-9P-YiD" customClass="ViewController" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="-46" y="452"/>
         </scene>
-        <!--Feedback Table View Controller - Feedback-->
+        <!--Feedback-->
         <scene sceneID="YeP-T3-xr0">
             <objects>
                 <tableViewController storyboardIdentifier="FeedbackTableViewController" id="0tm-Ix-cXy" customClass="FeedbackTableViewController" sceneMemberID="viewController">
@@ -68,16 +68,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2cs-lZ-lmx">
-                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2cs-lZ-lmx" id="m69-f3-1K3">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="0tm-Ix-cXy" id="UMW-ie-Nyf"/>
                             <outlet property="delegate" destination="0tm-Ix-cXy" id="Yub-Wq-nTu"/>
