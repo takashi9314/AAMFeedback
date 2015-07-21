@@ -21,6 +21,7 @@
     vc.beforeShowAction = ^(MFMailComposeViewController *controller) {
         [controller addAttachmentData:[@"text" dataUsingEncoding:NSUTF8StringEncoding] mimeType:@"text/plain" fileName:@"example.text"];
     };
+    vc.descriptionPlaceHolder = @"Please write for details in modal.";
     UINavigationController *feedbackNavigation = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:feedbackNavigation animated:YES completion:nil];
 }
