@@ -19,8 +19,6 @@ static BOOL _alwaysUseMainBundle = NO;
 
 @property(nonatomic, strong) UILabel *descriptionPlaceHolderLabel;
 
-@property(nonatomic) BOOL isFeedbackSent;
-
 - (NSString *)_platformString;
 
 - (NSString *)_feedbackSubject;
@@ -155,13 +153,6 @@ static BOOL _alwaysUseMainBundle = NO;
     [self _updateNavigation];
     [self _updatePlaceholder];
     [self.tableView reloadData];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    if (self.isFeedbackSent) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -364,15 +355,17 @@ static BOOL _alwaysUseMainBundle = NO;
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller
           didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    if (result == MFMailComposeResultCancelled) {
-    } else if (result == MFMailComposeResultSent) {
-        self.isFeedbackSent = YES;
-    } else if (result == MFMailComposeResultFailed) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:self.mailDidFinishWithError
-                                                       delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alert show];
-    }
-    [controller dismissViewControllerAnimated:YES completion:nil];
+    __weak typeof(self) this = self;
+    [controller dismissViewControllerAnimated:YES completion:^{
+        if (result == MFMailComposeResultCancelled) {
+        } else if (result == MFMailComposeResultSent) {
+            [this dismissViewControllerAnimated:YES completion:nil];
+        } else if (result == MFMailComposeResultFailed) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:this.mailDidFinishWithError preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [this presentViewController:alert animated:YES completion:nil];
+        }
+    }];
 }
 
 
