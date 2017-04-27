@@ -443,7 +443,7 @@ static BOOL _alwaysUseMainBundle = NO;
 }
 
 - (NSString *)_appVersion {
-    return [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    return [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersion"];
 }
 
 
